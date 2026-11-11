@@ -1,183 +1,77 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>A Little Sorry for Snehuu 💗</title>
-
+    <title>A Little Surprise For You ❤️</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
 
     <div class="hearts" id="hearts"></div>
 
-    <!-- Welcome Section -->
-    <section class="hero">
-
-        <div class="cartoon">🐻 💗 🐰</div>
-
-        <h1>Hey Snehuu!</h1>
-
-        <p>I made something special for you...</p>
-
-        <button onclick="showMemories()">
-            Open My Little World 💌
-        </button>
-
+    <!-- Welcome screen -->
+    <section class="screen active" id="welcome">
+        <div class="card">
+            <div class="emoji">💗 🧸 💗</div>
+            <h1>Hey You!</h1>
+            <p>I have something special to ask you...</p>
+            <p class="small-text">Are you ready for a little surprise? 🥰</p>
+            <button onclick="startQuestions()">Open My Little World 💌</button>
+        </div>
     </section>
 
-    <main id="main-content">
+    <!-- Questions screen -->
+    <section class="screen" id="questions">
+        <div class="card">
+            <div class="emoji" id="questionEmoji">🥰</div>
+            <p class="progress" id="progress">Question 1 of 5</p>
+            <h1 id="questionTitle">A little question!</h1>
+            <p id="questionText"></p>
+            <div class="answers" id="answers"></div>
+            <p id="feedback" class="feedback"></p>
+        </div>
+    </section>
 
-        <!-- Sorry Message -->
-        <section class="section">
+    <!-- Final surprise -->
+    <section class="screen" id="final">
+        <div class="card">
+            <div class="emoji">🎁 💖 🎀</div>
+            <h1>One Last Surprise!</h1>
+            <p>You made it through all my questions!</p>
+            <p>And now there's something important I want to ask you...</p>
+            <button onclick="showProposal()">Open Your Surprise 💝</button>
+        </div>
+    </section>
 
-            <h2>First of all... 🥺</h2>
+    <!-- Proposal screen -->
+    <section class="screen" id="proposal">
+        <div class="card">
+            <div class="emoji">💗 🥹 💗</div>
+            <h1>One Special Question...</h1>
+            <p class="proposal-text">Will you be my love? ❤️</p>
 
-            <div class="card">
-
-                <h3>I'm Sorry, Snehuu! 💗</h3>
-
-                <p>
-                    I know things haven't been perfect.
-                    I am genuinely sorry for my mistakes.
-                    I never wanted to hurt you.
-                    I hope you can understand how much
-                    I value you.
-                </p>
-
+            <div class="proposal-buttons">
+                <button class="yes-button" id="yesBtn" onclick="sayYes()">YES! 💖</button>
+                <button class="no-button" id="noBtn" onclick="sayNo()">NO 🙈</button>
             </div>
 
-        </section>
+            <p id="proposalMessage" class="feedback"></p>
+        </div>
+    </section>
 
-        <!-- Photo Gallery -->
-        <section class="section">
-
-            <h2>Little Memories 📸</h2>
-
-            <div class="gallery">
-
-                <img src="assets/photo1.jpg" alt="Memory 1">
-
-                <img src="assets/photo2.jpg" alt="Memory 2">
-
-                <img src="assets/photo3.jpg" alt="Memory 3">
-
-            </div>
-
-            <p>Some moments deserve to be remembered 💕</p>
-
-        </section>
-
-        <!-- Video Memories -->
-        <section class="section">
-
-            <h2>Our Video Memories 🎥</h2>
-
-            <div class="card">
-
-                <video controls playsinline>
-                    <source src="assets/memory.mp4" type="video/mp4">
-                    Your browser does not support video.
-                </video>
-
-            </div>
-
-        </section>
-
-        <!-- Sorry Letter -->
-        <section class="section">
-
-            <h2>A Little Letter For You 💌</h2>
-
-            <div class="letter">
-
-                <h3>Dear Snehuu,</h3>
-
-                <p>
-                    I don't know the perfect words to express
-                    everything, but I want to say I'm truly sorry.
-                </p>
-
-                <p>
-                    I understand that saying sorry doesn't
-                    automatically fix everything. I want to
-                    learn from my mistakes and become better.
-                </p>
-
-                <p>
-                    Thank you for the beautiful memories.
-                    You deserve kindness, honesty and respect.
-                </p>
-
-                <p>
-                    I don't expect anything from you.
-                    If you're comfortable, I'd be grateful
-                    for a chance to talk.
-                </p>
-
-                <h3>With a sincere apology 💗</h3>
-
-            </div>
-
-        </section>
-
-        <!-- Background Music -->
-        <section class="section">
-
-            <h2>A Little Music 🎵</h2>
-
-            <button onclick="toggleMusic()" id="musicButton">
-                ▶ Play Music
-            </button>
-
-            <audio id="music" loop>
-                <source src="assets/music.mp3" type="audio/mpeg">
-            </audio>
-
-        </section>
-
-        <!-- Surprise Ending -->
-        <section class="section">
-
-            <h2>One Last Surprise 🎁</h2>
-
-            <button onclick="showSurprise()">
-                Open Your Surprise 💝
-            </button>
-
-            <div id="surprise" class="surprise">
-
-                <div class="cartoon">🐻 🌷 🐰</div>
-
-                <h2>You're Special, Snehuu! 💗</h2>
-
-                <p>
-                    No matter what happens,
-                    I genuinely wish you happiness,
-                    And i will always gonna love you,
-                    you're still my little baby,
-                    and you will always gonna be my 
-                    little baby.
-                    
-                </p>
-
-                <p>Take care of yourself! 🌸</p>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <footer>
-        Made with sincerity 💗
-        <br>
-        A little website for Snehuu.
-    </footer>
-
-    <script src="script.js"></script>
+    <!-- Celebration screen -->
+    <section class="screen" id="celebration">
+        <div class="card">
+            <div class="emoji">🥳 💖 🎉</div>
+            <h1>Yayyyy!</h1>
+            <p>Thank you for sharing this special moment!</p>
+            <p>Sending you lots of happiness and smiles! 💕</p>
+            <div class="emoji">🌷 🧸 🌷</div>
+        </div>
+    </section>
 
 </body>
 </html>
